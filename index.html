@@ -1,1 +1,1203 @@
-1223
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="color-scheme" content="light"/>
+<meta name="supported-color-schemes" content="light"/>
+<meta name="theme-color" content="#D0007F"/>
+<title>BDIA 2.0 · 부산형 디지털 인재 순환 생태계</title>
+<meta name="description" content="ICT 교육에서 부산 전략산업의 AI 전환을 지원하는 인재순환 생태계로 — BDIA 2.0 정책 브리프"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --magenta:#D0007F; --magenta-deep:#9E0061; --magenta-light:#E84BA0;
+  --blue:#0046AA; --blue-deep:#003278;
+  --grad:linear-gradient(135deg,#D0007F 0%,#A8237A 50%,#0046AA 100%);
+  --grad-r:linear-gradient(135deg,#0046AA 0%,#A8237A 50%,#D0007F 100%);
+  --grad-soft:linear-gradient(135deg,#FCEAF3 0%,#E8EFFA 100%);
+  --ink:#1A1A1A; --ink-2:#444; --ink-3:#767676; --ink-4:#A0A0A0;
+  --line:#E8E5EC; --line-2:#F0EEF3;
+  --bg:#fff; --bg-soft:#FAF8FC; --bg-dark:#0F0A1A;
+  --sans:"Pretendard Variable","Pretendard",system-ui,sans-serif;
+  --shadow-sm:0 2px 8px -2px rgba(0,0,0,0.06);
+  --shadow-md:0 8px 24px -8px rgba(208,0,127,0.12);
+  --shadow-lg:0 16px 40px -12px rgba(208,0,127,0.18);
+}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{font-family:var(--sans);background:#fff;color:var(--ink);font-size:17px;line-height:1.6;letter-spacing:-0.01em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,3vw,32px)}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;background:none;border:none;cursor:pointer;color:inherit}
+img{max-width:100%;display:block}
+::selection{background:var(--magenta);color:#fff}
+
+/* ============= GNB ============= */
+.gnb{border-bottom:1px solid var(--line);background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);position:sticky;top:0;z-index:50}
+.gnb-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:24px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-mark{display:flex;align-items:center;gap:10px}
+.logo-mark .sq{width:34px;height:34px;background:var(--grad);border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px;box-shadow:0 6px 16px -4px rgba(208,0,127,0.4);letter-spacing:-0.02em}
+.logo-name{font-weight:800;font-size:21px;letter-spacing:-0.025em}
+.logo-name sub{font-size:12px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800;letter-spacing:0.08em;vertical-align:sub;margin-left:3px}
+.logo-sub{font-size:13px;color:var(--ink-3);border-left:1px solid var(--line);padding-left:14px;letter-spacing:0.02em}
+.gnb-menu{display:flex;gap:30px;font-size:16px;font-weight:600;color:var(--ink-2)}
+.gnb-menu a{position:relative;padding:6px 0;transition:color .2s}
+.gnb-menu a:hover{color:var(--magenta)}
+.gnb-menu a.active{color:var(--magenta)}
+.gnb-menu a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--grad);border-radius:2px}
+.gnb-cta{font-size:14.5px;border:1.5px solid var(--ink);padding:9px 18px;border-radius:999px;font-weight:700;letter-spacing:0.02em;transition:all .2s}
+.gnb-cta:hover{background:var(--grad);color:#fff;border-color:transparent}
+@media(max-width:880px){.gnb-menu,.gnb-cta{display:none}}
+
+/* ============= HERO ============= */
+.hero{background:var(--bg-soft);padding:72px 0 60px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-180px;top:-150px;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(208,0,127,0.12),transparent 65%);pointer-events:none}
+.hero::after{content:"";position:absolute;left:-150px;bottom:-200px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,70,170,0.10),transparent 65%);pointer-events:none}
+.hero-inner{position:relative;z-index:1}
+.bread{display:flex;gap:8px;font-size:14px;color:var(--ink-3);margin-bottom:26px;letter-spacing:0.02em}
+.bread span:not(:last-child)::after{content:"›";margin-left:8px;color:var(--ink-4)}
+.bread .now{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--grad);color:#fff;font-size:13px;font-weight:700;padding:7px 16px;border-radius:999px;letter-spacing:0.14em;margin-bottom:24px;box-shadow:0 6px 18px -4px rgba(208,0,127,0.4)}
+.hero-tag::before{content:"";width:6px;height:6px;background:#fff;border-radius:50%}
+.hero h1{font-size:clamp(28px,4.8vw,52px);font-weight:800;letter-spacing:-0.038em;line-height:1.15;margin-bottom:22px}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1 .ul{position:relative;display:inline-block}
+.hero h1 .ul::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:10px;background:var(--grad);opacity:0.18;z-index:-1;border-radius:2px}
+.hero .lead{font-size:clamp(16px,1.5vw,19px);color:var(--ink-2);line-height:1.75;max-width:720px}
+.hero .lead b{font-weight:700;color:var(--magenta-deep)}
+
+.quick{background:#fff;border:1px solid var(--line);border-radius:16px;margin-top:40px;overflow:hidden;position:relative;box-shadow:var(--shadow-md)}
+.quick::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+.quick-inner{display:grid;grid-template-columns:repeat(4,1fr)}
+.qc{padding:28px 26px;border-right:1px solid var(--line);position:relative}
+.qc:last-child{border-right:none}
+.qc .lab{font-size:14px;color:var(--ink-3);font-weight:600;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.06em}
+.qc .num{font-size:36px;font-weight:800;letter-spacing:-0.04em;color:var(--ink);line-height:1;display:flex;align-items:baseline;gap:4px;font-variant-numeric:tabular-nums}
+.qc .num .u{font-size:13px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800}
+.qc .bar{margin-top:14px;height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.qc .bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:2px;transition:width 1.5s cubic-bezier(0.16,1,0.3,1)}
+.qc.in .bar i{width:var(--p)}
+@media(max-width:780px){.quick-inner{grid-template-columns:1fr 1fr}.qc:nth-child(2){border-right:none}.qc:nth-child(1),.qc:nth-child(2){border-bottom:1px solid var(--line)}}
+
+/* ============= SECTION ============= */
+.sec{padding:88px 0 40px;position:relative}
+.sec.tight{padding-top:40px}
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:18px;margin-bottom:36px;gap:18px;flex-wrap:wrap;position:relative}
+.sec-h::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--ink)}
+.sec-h::before{content:"";position:absolute;left:0;bottom:0;width:96px;height:2px;background:var(--grad);z-index:1}
+.sec-h .l h2{font-size:clamp(22px,2.6vw,34px);font-weight:800;letter-spacing:-0.03em;line-height:1.18}
+.sec-h .l h2 .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sec-h .l .kicker{font-size:15px;color:var(--ink-3);margin-top:10px;line-height:1.55;max-width:560px}
+.sec-h .r{font-size:14px;color:var(--ink-3);display:flex;align-items:center;gap:8px}
+.sec-h .r .hint{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:var(--grad-soft);border-radius:999px;font-weight:700;color:var(--magenta-deep);letter-spacing:0.06em}
+.sec-h .r .hint::before{content:"";width:6px;height:6px;background:var(--magenta);border-radius:50%;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.7)}}
+
+/* ============= WHY ============= */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.why-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px 28px;position:relative;transition:all .3s ease;overflow:hidden}
+.why-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.why-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:transparent}
+.why-card:hover::before{transform:scaleX(1)}
+.why-card .ord{font-size:46px;font-weight:800;letter-spacing:-0.05em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:18px;font-feature-settings:"tnum"}
+.why-card h3{font-size:21px;font-weight:800;letter-spacing:-0.02em;line-height:1.35;margin-bottom:14px}
+.why-card p{font-size:15.5px;color:var(--ink-2);line-height:1.7}
+.why-card p strong{color:var(--magenta-deep);font-weight:700}
+@media(max-width:780px){.why-grid{grid-template-columns:1fr}}
+
+/* ============= 1.0 vs 2.0 ============= */
+.cmp{margin-top:40px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.cmp-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:24px 32px;background:var(--bg-soft);border-bottom:1px solid var(--line);gap:20px}
+.cmp-top .ver{font-size:15px;font-weight:700;letter-spacing:0.04em;display:flex;align-items:baseline;gap:8px}
+.cmp-top .ver .v{font-size:13px;color:var(--ink-3);font-weight:600;letter-spacing:0.12em}
+.cmp-top .ver .n{font-size:24px;font-weight:800;letter-spacing:-0.02em}
+.cmp-top .new .n{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:26px}
+.cmp-top .new{text-align:right;justify-content:flex-end}
+.cmp-top .arr{width:38px;height:38px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;box-shadow:0 4px 12px -2px rgba(208,0,127,0.4)}
+.cmp-body{display:grid;grid-template-columns:1fr 1fr}
+.cmp-col{padding:28px 32px}
+.cmp-col.old{background:#FAFAFA;border-right:1px solid var(--line)}
+.cmp-col.new{background:#fff;position:relative}
+.cmp-col h4{font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px;padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.cmp-col.new h4{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cmp-list{list-style:none;display:grid;gap:12px}
+.cmp-list li{font-size:15.5px;line-height:1.6;color:var(--ink-2);padding-left:20px;position:relative}
+.cmp-list li::before{content:"−";position:absolute;left:0;top:0;color:var(--ink-4);font-weight:700}
+.cmp-col.new .cmp-list li{color:var(--ink)}
+.cmp-col.new .cmp-list li::before{content:"+";background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800}
+.cmp-col.new .cmp-list li b{color:var(--magenta-deep);font-weight:700}
+@media(max-width:780px){.cmp-body{grid-template-columns:1fr}.cmp-col.old{border-right:none;border-bottom:1px solid var(--line)}.cmp-top{padding:18px 22px}}
+
+/* ============= VISION ============= */
+.vision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vc{background:linear-gradient(180deg,var(--bg-soft) 0%,#fff 100%);border:1px solid var(--line);border-radius:16px;padding:28px;position:relative;overflow:hidden;transition:all .3s ease}
+.vc::after{content:"";position:absolute;top:-50%;right:-50%;width:200px;height:200px;border-radius:50%;background:var(--grad);opacity:0.06;transition:all .4s ease}
+.vc:hover::after{transform:scale(1.5);opacity:0.1}
+.vc:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.vc-axis{display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.16em;padding:5px 11px;background:var(--grad);color:#fff;border-radius:999px;margin-bottom:18px;text-transform:uppercase}
+.vc h4{font-size:22px;font-weight:800;letter-spacing:-0.02em;margin-bottom:12px;position:relative;z-index:1}
+.vc p{font-size:15.5px;color:var(--ink-2);line-height:1.7;position:relative;z-index:1;margin-bottom:18px}
+.vc-keys{display:flex;flex-wrap:wrap;gap:6px;position:relative;z-index:1}
+.vc-keys span{font-size:13px;padding:4px 10px;background:#fff;border:1px solid var(--line);border-radius:999px;color:var(--magenta-deep);font-weight:600}
+@media(max-width:780px){.vision-grid{grid-template-columns:1fr}}
+
+/* ============= TRACKS — 탭 + 아코디언 ============= */
+.tabs{display:flex;gap:0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px;margin-bottom:28px;overflow-x:auto;scrollbar-width:none;box-shadow:var(--shadow-sm)}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1;min-width:180px;padding:14px 18px;border-radius:10px;font-weight:700;font-size:15.5px;color:var(--ink-3);transition:all .25s;text-align:left;letter-spacing:-0.01em;white-space:nowrap}
+.tab .tn{display:block;font-size:12px;letter-spacing:0.14em;color:var(--ink-3);font-weight:700;margin-bottom:4px}
+.tab .tt{font-size:16px;font-weight:800}
+.tab:hover{background:var(--bg-soft);color:var(--ink)}
+.tab.active{background:var(--grad);color:#fff;box-shadow:0 8px 22px -8px rgba(208,0,127,0.45)}
+.tab.active .tn{color:rgba(255,255,255,0.85)}
+
+.tab-panel{display:none;animation:fade .4s ease}
+.tab-panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.track-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;padding:14px 20px;background:var(--grad-soft);border-radius:12px}
+.track-meta .tm-title{font-size:15px;color:var(--magenta-deep);font-weight:700;line-height:1.5}
+.track-meta .tm-count{font-size:13px;color:var(--ink-3);font-weight:600;letter-spacing:0.06em;text-transform:uppercase}
+.track-meta .tm-count b{font-size:20px;color:var(--magenta);font-weight:800;letter-spacing:-0.02em;margin-right:4px;vertical-align:-2px}
+
+.subs{display:grid;gap:12px}
+.sub{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:all .25s}
+.sub:hover{border-color:rgba(208,0,127,0.3)}
+.sub.open{border-color:transparent;box-shadow:var(--shadow-lg)}
+.sub-head{display:grid;grid-template-columns:auto 1fr auto auto;gap:18px;align-items:center;padding:20px 24px;cursor:pointer;user-select:none}
+.sub-code{font-family:ui-monospace,monospace;font-size:13px;background:var(--grad-soft);color:var(--magenta-deep);padding:6px 11px;border-radius:7px;font-weight:800;letter-spacing:0.06em;flex-shrink:0;transition:all .25s}
+.sub.open .sub-code{background:var(--grad);color:#fff}
+.sub-title{font-size:18px;font-weight:800;letter-spacing:-0.02em;line-height:1.35;color:var(--ink)}
+.sub-title .tagline{display:block;font-size:14.5px;font-weight:500;color:var(--ink-3);margin-top:5px;letter-spacing:0;line-height:1.5}
+.sub-pills{display:flex;gap:6px;flex-wrap:wrap}
+.pill{font-size:12.5px;padding:4px 10px;background:var(--bg-soft);color:var(--ink-2);border-radius:999px;font-weight:600;white-space:nowrap}
+.sub-toggle{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--line);color:var(--magenta);font-size:20px;font-weight:300;transition:all .3s;flex-shrink:0}
+.sub.open .sub-toggle{background:var(--grad);color:#fff;border-color:transparent;transform:rotate(45deg)}
+
+.sub-body{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(0.16,1,0.3,1)}
+.sub.open .sub-body{max-height:1200px}
+.sub-body-inner{padding:0 24px 24px;border-top:1px solid var(--line);padding-top:26px;display:grid;gap:22px}
+
+.sb-block-h{font-size:13px;font-weight:800;letter-spacing:0.12em;color:var(--ink-3);text-transform:uppercase;display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.sb-block-h::before{content:"";width:14px;height:2px;background:var(--grad);border-radius:2px}
+
+.mini-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.mk{padding:16px;border-radius:11px;background:var(--grad-soft);border:1px solid rgba(208,0,127,0.08);position:relative;overflow:hidden}
+.mk::before{content:"";position:absolute;left:0;top:0;width:3px;height:24px;background:var(--grad)}
+.mk .l{font-size:12.5px;color:var(--ink-3);margin-bottom:10px;font-weight:600;line-height:1.35}
+.mk .v{font-size:25px;font-weight:800;color:var(--ink);letter-spacing:-0.03em;line-height:1;display:flex;align-items:baseline;gap:2px;font-variant-numeric:tabular-nums}
+.mk .v .u{font-size:13px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800}
+
+.steprow{display:flex;background:#fff;border:1px solid var(--line);border-radius:11px;overflow:hidden}
+.sr{flex:1;padding:16px;border-right:1px dashed var(--line);min-width:0;position:relative}
+.sr:last-child{border-right:none}
+.sr .n{display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center;background:var(--grad);color:#fff;border-radius:50%;font-size:12.5px;font-weight:800;margin-bottom:10px}
+.sr .t{font-size:14.5px;font-weight:700;letter-spacing:-0.015em;line-height:1.35;color:var(--ink)}
+
+.risk-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.rsk{padding:14px 16px;border-radius:10px;font-size:14.5px;line-height:1.55;display:flex;gap:10px;align-items:flex-start}
+.rsk.risk{background:rgba(208,0,127,0.04);border-left:3px solid var(--magenta)}
+.rsk.fix{background:rgba(0,70,170,0.04);border-left:3px solid var(--blue)}
+.rsk .tg{font-size:12px;font-weight:800;letter-spacing:0.08em;padding:2px 7px;border-radius:4px;flex-shrink:0;margin-top:1px}
+.rsk.risk .tg{background:var(--magenta);color:#fff}
+.rsk.fix .tg{background:var(--blue);color:#fff}
+.rsk .tx{color:var(--ink-2)}
+@media(max-width:780px){
+  .sub-head{grid-template-columns:auto 1fr auto;padding:16px 18px;gap:12px}
+  .sub-pills{display:none}
+  .mini-kpis{grid-template-columns:1fr 1fr}
+  .steprow{flex-direction:column}
+  .sr{border-right:none;border-bottom:1px dashed var(--line)}
+  .sr:last-child{border-bottom:none}
+  .risk-row{grid-template-columns:1fr}
+}
+
+/* ============= REGIONS — 권역 탭 ============= */
+.rg-wrap{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.rg-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.rg-tab{padding:24px 24px;text-align:left;border-right:1px solid var(--line);position:relative;transition:all .25s;cursor:pointer}
+.rg-tab:last-child{border-right:none}
+.rg-tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.rg-tab:hover{background:var(--bg-soft)}
+.rg-tab.active{background:var(--bg-soft)}
+.rg-tab.active::after{transform:scaleX(1)}
+.rg-tab .rg-status{font-size:12px;font-weight:800;letter-spacing:0.12em;padding:3px 8px;border-radius:4px;background:var(--line);color:var(--ink-3);display:inline-block;margin-bottom:12px}
+.rg-tab.new .rg-status{background:var(--grad);color:#fff}
+.rg-tab h4{font-size:19px;font-weight:800;letter-spacing:-0.02em;margin-bottom:5px}
+.rg-tab h4 .en{display:block;font-size:13px;color:var(--ink-3);font-weight:600;letter-spacing:0.04em;margin-top:3px}
+.rg-tab .focus{font-size:14px;color:var(--ink-3);line-height:1.5;margin-top:8px}
+
+.rg-panel{display:none;padding:32px;animation:fade .4s ease}
+.rg-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.rg-panel .l h5{font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--magenta);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.rg-panel .l h5::before{content:"";width:14px;height:2px;background:var(--grad)}
+.rg-panel .l h3{font-size:26px;font-weight:800;letter-spacing:-0.025em;margin-bottom:14px;line-height:1.25}
+.rg-panel .l p{font-size:15.5px;color:var(--ink-2);line-height:1.7}
+.rg-panel .r{background:var(--grad-soft);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.rg-item{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:flex-start;padding:14px;background:#fff;border-radius:10px;border:1px solid rgba(208,0,127,0.08)}
+.rg-item .ic{width:38px;height:38px;border-radius:9px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;letter-spacing:0.04em;flex-shrink:0}
+.rg-item .tx{font-size:15px;line-height:1.55;color:var(--ink)}
+.rg-item .tx b{display:block;font-weight:800;margin-bottom:3px;color:var(--ink);font-size:16px}
+.rg-item .tx span{color:var(--ink-3);font-size:14.5px}
+@media(max-width:780px){
+  .rg-tabs{grid-template-columns:1fr}
+  .rg-tab{border-right:none;border-bottom:1px solid var(--line)}
+  .rg-tab:last-child{border-bottom:none}
+  .rg-panel.active{grid-template-columns:1fr;padding:22px}
+}
+
+/* ============= ROADMAP ============= */
+.rm-wrap{background:#fff;border:1px solid var(--line);border-radius:18px;padding:36px;position:relative;overflow:hidden;box-shadow:var(--shadow-sm)}
+.rm-track{position:relative;height:80px;display:flex;align-items:center}
+.rm-line{position:absolute;left:9px;right:9px;top:50%;height:3px;background:var(--line);border-radius:2px;transform:translateY(-50%)}
+.rm-line i{position:absolute;left:0;top:0;height:100%;width:0;background:var(--grad);border-radius:2px;transition:width .7s ease}
+.rm-dots{position:relative;display:flex;justify-content:space-between;width:100%}
+.rm-dot{width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--line);cursor:pointer;transition:all .3s;position:relative;z-index:2;padding:0}
+.rm-dot:hover{border-color:var(--magenta);transform:scale(1.2)}
+.rm-dot.active{border-color:transparent;background:var(--grad);transform:scale(1.35);box-shadow:0 0 0 7px rgba(208,0,127,0.12)}
+.rm-dot .y{position:absolute;top:-32px;left:50%;transform:translateX(-50%);font-size:13px;color:var(--ink-3);font-weight:700;letter-spacing:0.04em;white-space:nowrap;transition:all .25s}
+.rm-dot.active .y{color:var(--magenta);font-size:14px;font-weight:800}
+
+.rm-content{margin-top:28px;padding-top:28px;border-top:1px solid var(--line);min-height:180px}
+.rm-panel{display:none;animation:fade .4s ease}
+.rm-panel.active{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start}
+.rm-panel .phase{font-size:40px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.035em;line-height:1;font-variant-numeric:tabular-nums}
+.rm-panel .phase small{display:block;font-size:13px;color:var(--ink-3);font-weight:700;margin-top:8px;letter-spacing:0.08em;-webkit-text-fill-color:var(--ink-3);text-transform:uppercase}
+.rm-panel .desc h4{font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:14px}
+.rm-panel .desc ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 20px}
+.rm-panel .desc li{font-size:15.5px;color:var(--ink-2);padding-left:16px;position:relative;line-height:1.6}
+.rm-panel .desc li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--grad);border-radius:50%}
+@media(max-width:780px){
+  .rm-wrap{padding:22px}
+  .rm-panel.active{grid-template-columns:1fr;gap:18px}
+  .rm-panel .phase{font-size:32px}
+  .rm-panel .desc ul{grid-template-columns:1fr}
+}
+
+/* ============= OUTCOMES ============= */
+.out-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.out{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;position:relative;overflow:hidden;transition:all .3s ease}
+.out:hover{border-color:transparent;box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.out::before{content:"";position:absolute;top:0;left:0;width:4px;height:0;background:var(--grad);transition:height .4s ease}
+.out:hover::before{height:100%}
+.out .o-no{font-size:14px;color:var(--magenta);font-weight:800;letter-spacing:0.14em;margin-bottom:14px}
+.out h4{font-size:21px;font-weight:800;letter-spacing:-0.02em;margin-bottom:14px;line-height:1.3}
+.out ul{list-style:none;display:grid;gap:8px}
+.out li{font-size:15.5px;color:var(--ink-2);padding-left:18px;position:relative;line-height:1.65}
+.out li::before{content:"▸";position:absolute;left:0;top:0;color:var(--magenta);font-size:11px}
+@media(max-width:780px){.out-grid{grid-template-columns:1fr}}
+
+/* ============= FINAL KPI (DARK) ============= */
+.final{background:var(--bg-dark);color:#fff;padding:84px 0;margin-top:80px;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(208,0,127,0.18),transparent 60%)}
+.final::after{content:"";position:absolute;bottom:-200px;left:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,70,170,0.18),transparent 60%)}
+.final-year{position:absolute;top:30px;right:40px;font-size:clamp(120px,18vw,260px);font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;opacity:0.08;letter-spacing:-0.05em;line-height:1;pointer-events:none}
+.final-inner{position:relative;z-index:1}
+.final h3{font-size:13px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:18px}
+.final h2{font-size:clamp(26px,3.8vw,42px);font-weight:800;letter-spacing:-0.03em;margin-bottom:50px;line-height:1.18;max-width:720px}
+.final h2 .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.final-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(255,255,255,0.14)}
+.fk{padding:30px 24px 30px 0;border-right:1px solid rgba(255,255,255,0.14);border-bottom:1px solid rgba(255,255,255,0.14)}
+.fk:not(:first-child){padding-left:24px}
+.fk:nth-child(4n){border-right:none}
+.fk .v{font-size:clamp(32px,4.5vw,52px);font-weight:800;letter-spacing:-0.04em;line-height:1;margin-bottom:14px;display:flex;align-items:baseline;gap:4px;font-variant-numeric:tabular-nums}
+.fk .v .u{font-size:0.34em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800}
+.fk .l{font-size:14.5px;color:rgba(255,255,255,0.65);line-height:1.5;font-weight:500}
+@media(max-width:780px){
+  .final-grid{grid-template-columns:1fr 1fr}
+  .fk:nth-child(2n){border-right:none}
+  .fk:not(:first-child):not(:nth-child(2n+1)){padding-left:24px}
+  .fk:nth-child(odd){padding-left:0}
+  .fk:nth-child(even){padding-left:24px}
+}
+
+/* ============= FOOTER ============= */
+.foot{background:#1A1A1A;color:#fff;padding:60px 0 36px;position:relative}
+.foot-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.foot-brand .logo-name{color:#fff;font-size:24px}
+.foot-brand p{font-size:15.5px;color:rgba(255,255,255,0.6);line-height:1.65;margin-top:16px;max-width:380px}
+.foot-col h5{font-size:13px;font-weight:800;letter-spacing:0.16em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px;text-transform:uppercase}
+.foot-col ul{list-style:none}
+.foot-col li{font-size:15px;padding:5px 0;color:rgba(255,255,255,0.7);line-height:1.6}
+.foot-bottom{padding-top:24px;font-size:13px;color:rgba(255,255,255,0.4);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:ui-monospace,monospace;letter-spacing:0.04em}
+@media(max-width:780px){.foot-inner{grid-template-columns:1fr;gap:32px}}
+
+/* reveal */
+.rev{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.rev.in{opacity:1;transform:translateY(0)}
+.rev-stagger > *{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.rev-stagger.in > *{opacity:1;transform:translateY(0)}
+.rev-stagger.in > *:nth-child(1){transition-delay:.05s}
+.rev-stagger.in > *:nth-child(2){transition-delay:.12s}
+.rev-stagger.in > *:nth-child(3){transition-delay:.19s}
+.rev-stagger.in > *:nth-child(4){transition-delay:.26s}
+
+/* scroll progress */
+.scroll-prog{position:fixed;top:0;left:0;right:0;height:3px;background:transparent;z-index:60;pointer-events:none}
+.scroll-prog i{display:block;height:100%;width:0;background:var(--grad);transition:width .1s linear}
+
+/* TOC floating */
+.toc{position:fixed;left:24px;bottom:28px;z-index:40;display:flex;align-items:center;gap:10px;padding:8px 14px;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow-md);font-size:13px;font-family:ui-monospace,monospace;letter-spacing:0.06em}
+.toc .num{font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:15px}
+.toc .name{color:var(--ink);font-weight:700;text-transform:uppercase}
+@media(max-width:780px){.toc{display:none}}
+</style>
+</head>
+<body>
+
+<!-- scroll progress -->
+<div class="scroll-prog"><i id="scrollProg"></i></div>
+
+<!-- GNB -->
+<header class="gnb">
+  <div class="wrap gnb-inner">
+    <div class="logo">
+      <div class="logo-mark">
+        <div class="sq">B</div>
+        <div class="logo-name">BDIA<sub>2.0</sub></div>
+      </div>
+      <div class="logo-sub">부산 디지털 인재 아카데미</div>
+    </div>
+    <nav class="gnb-menu" id="gnbMenu">
+      <a href="#why">배경</a>
+      <a href="#vision">비전</a>
+      <a href="#tracks">3대 트랙</a>
+      <a href="#regions">권역</a>
+      <a href="#roadmap">로드맵</a>
+      <a href="#outcomes">기대효과</a>
+    </nav>
+    <a href="#tracks" class="gnb-cta">사업 살펴보기</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="bread"><span>부산광역시 정책</span><span>인재양성</span><span class="now">BDIA 2.0</span></div>
+    <span class="hero-tag">POLICY BRIEF · 2027—2031</span>
+    <h1>ICT 교육에서 <span class="grad">AI 전환</span>을 지원하는<br><span class="ul">인재순환 생태계</span>로</h1>
+    <p class="lead">교육생을 더 많이 배출하는 사업이 아니라, 부산에서 <b>배우고 → 일하고 → 성장하고 → 다시 연결되는</b> 순환 플랫폼입니다.</p>
+
+    <div class="quick">
+      <div class="quick-inner">
+        <div class="qc" data-cnt="1500" style="--p:100%">
+          <div class="lab">총사업비</div>
+          <div class="num"><span class="cnt">0</span><span class="u">억원</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="qc" data-cnt="5" style="--p:80%">
+          <div class="lab">사업기간</div>
+          <div class="num"><span class="cnt">0</span><span class="u">개년</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="qc" data-cnt="9" style="--p:65%">
+          <div class="lab">세부사업</div>
+          <div class="num"><span class="cnt">0</span><span class="u">개</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="qc" data-cnt="3" style="--p:55%">
+          <div class="lab">교육 거점</div>
+          <div class="num"><span class="cnt">0</span><span class="u">권역</span></div>
+          <div class="bar"><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-h rev">
+      <div class="l">
+        <h2>왜 지금 <span class="grad">BDIA 2.0</span>인가</h2>
+        <div class="kicker">AI는 산업 구조를 바꾸고 있고, 부산은 그 전환을 견인할 인재가 필요합니다. 그러나 인재 양성은 단일 주체로 풀 수 없습니다.</div>
+      </div>
+    </div>
+
+    <div class="why-grid rev-stagger">
+      <div class="why-card">
+        <div class="ord">i</div>
+        <h3>도시 차원의 과제</h3>
+        <p><strong>대학</strong>은 산업수요를 즉각 반영하기 어렵고, <strong>민간 교육기관</strong>은 단기과정 중심이며, <strong>기업</strong>은 지역 인재를 직접 검증·육성하기 어렵습니다. AI 인재양성은 도시 단위 공동 과제입니다.</p>
+      </div>
+      <div class="why-card">
+        <div class="ord">ii</div>
+        <h3>양성만으로 부족합니다</h3>
+        <p>교육 — <strong>프로젝트 경험</strong> — <strong>채용연계</strong> — <strong>정주 지원</strong> — <strong>재교육</strong>이 하나의 체계로 연결돼야 고급 인재의 지역 정주가 지속됩니다.</p>
+      </div>
+      <div class="why-card">
+        <div class="ord">iii</div>
+        <h3>중간자가 절실합니다</h3>
+        <p>부산시는 산업–인재 정책의 <strong>방향을 설정</strong>하고, BIPA는 실행기관으로서 교육기관·기업·청년을 <strong>연결하는 생태계 조성</strong>을 담당합니다.</p>
+      </div>
+    </div>
+
+    <!-- 1.0 vs 2.0 -->
+    <div class="cmp rev">
+      <div class="cmp-top">
+        <div class="ver"><span class="v">VERSION</span><span class="n">1.0</span></div>
+        <div class="arr">→</div>
+        <div class="ver new"><span class="v">VERSION</span><span class="n">2.0</span></div>
+      </div>
+      <div class="cmp-body">
+        <div class="cmp-col old">
+          <h4>BDIA 1.0 · 2022—2026 · 1,507억원</h4>
+          <ul class="cmp-list">
+            <li>14개 사업 공모대응 중심의 ICT 교육생 양성</li>
+            <li>'22~'25 누적 6,380명 수료 · 3,589명 취업</li>
+            <li>교육기관 중심 커리큘럼, 단기 취업지원</li>
+            <li>지역 단위 거버넌스·연계체계 미흡</li>
+          </ul>
+        </div>
+        <div class="cmp-col new">
+          <h4>BDIA 2.0 · 2027—2031 · 1,500억원</h4>
+          <ul class="cmp-list">
+            <li><b>기업 실수요 기반</b> 기업과 함께 만드는 교육</li>
+            <li>대학 인프라 연계 <b>PBL 교육</b> 전면 시행</li>
+            <li>해양·항만물류·제조 등 <b>전략산업 AI 융합</b></li>
+            <li><b>디지털인재연계센터</b> — 교육·채용·근속 전주기</li>
+            <li><b>BDIA Maestro</b> — 고급 개발자·후속 창업 지원</li>
+            <li>권역 거점 확장 <b>(동부산·원도심 + 서부산 신설)</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="sec tight" id="vision">
+  <div class="wrap">
+    <div class="sec-h rev">
+      <div class="l">
+        <h2>비전 · <span class="grad">순환형 디지털 인재 생태계</span></h2>
+        <div class="kicker">교육생 양성에서 인재 순환으로 — 부산 전략산업과 AI를 잇는 도시형 인재 플랫폼.</div>
+      </div>
+    </div>
+
+    <div class="vision-grid rev-stagger">
+      <div class="vc">
+        <span class="vc-axis">AXIS A · 교육 고도화</span>
+        <h4>표준 커리큘럼<br>+ Quality Mark</h4>
+        <p>기술스택 기반, 기업문제 해결형, 프로젝트 중심의 AI·도메인 실무교육 체계.</p>
+        <div class="vc-keys"><span>기업문제</span><span>PBL</span><span>인증</span></div>
+      </div>
+      <div class="vc">
+        <span class="vc-axis">AXIS B · 인재 연계</span>
+        <h4>디지털인재<br>연계센터</h4>
+        <p>교육생·수료생·기업을 연결하고 취업·근속·재매칭까지 24개월 추적 관리.</p>
+        <div class="vc-keys"><span>전주기</span><span>AI 매칭</span><span>재매칭</span></div>
+      </div>
+      <div class="vc">
+        <span class="vc-axis">AXIS C · 거버넌스</span>
+        <h4>지·산·학<br>상설 협의체</h4>
+        <p>60개 기관이 참여하는 부산 AI 인재정책 조정 플랫폼.</p>
+        <div class="vc-keys"><span>60개 기관</span><span>앵커기업</span><span>RISE 연계</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKS -->
+<section class="sec" id="tracks">
+  <div class="wrap">
+    <div class="sec-h rev">
+      <div class="l">
+        <h2>3대 트랙 · <span class="grad">9개 세부사업</span></h2>
+        <div class="kicker">탭으로 트랙을 전환하고, 세부사업 카드를 클릭하면 KPI·실행단계·리스크가 펼쳐집니다.</div>
+      </div>
+      <div class="r"><span class="hint">CLICK · TAP</span></div>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="t1"><span class="tn">TRACK 01</span><span class="tt">전략산업 AI 인재양성</span></button>
+      <button class="tab" data-tab="t2"><span class="tn">TRACK 02</span><span class="tt">인재 생태계 연계</span></button>
+      <button class="tab" data-tab="t3"><span class="tn">TRACK 03</span><span class="tt">지·산·학 거버넌스</span></button>
+    </div>
+
+    <!-- TRACK 1 -->
+    <div class="tab-panel active" id="t1">
+      <div class="track-meta">
+        <div class="tm-title">산업과 결합된 실무형 AI 인재를 길러냅니다 — 표준 커리큘럼·PBL·Maestro·업스킬링</div>
+        <div class="tm-count"><b>04</b>SUBPROJECTS</div>
+      </div>
+      <div class="subs">
+        <!-- T1.1 -->
+        <article class="sub" data-key="t1-1">
+          <div class="sub-head">
+            <span class="sub-code">T1.1</span>
+            <div class="sub-title">전략산업 버티컬 AI 인재육성<span class="tagline">해양·항만물류·제조 데이터와 AI 도구를 결합한 실무 교육</span></div>
+            <div class="sub-pills"><span class="pill">표준 커리큘럼</span><span class="pill">Quality Mark</span></div>
+            <span class="sub-toggle">+</span>
+          </div>
+          <div class="sub-body"><div class="sub-body-inner">
+            <div><div class="sb-block-h">KPI</div><div class="mini-kpis">
+              <div class="mk"><div class="l">표준 커리큘럼 적용</div><div class="v">30<span class="u">%↑</span></div></div>
+              <div class="mk"><div class="l">교육인증기관</div><div class="v">5<span class="u">개/년</span></div></div>
+              <div class="mk"><div class="l">기업과제 발굴</div><div class="v">10<span class="u">건/년</span></div></div>
+              <div class="mk"><div class="l">교육생 만족도</div><div class="v">4.5<span class="u">점↑</span></div></div>
+            </div></div>
+            <div><div class="sb-block-h">실행 단계</div><div class="steprow">
+              <div class="sr"><span class="n">1</span><div class="t">기술스택 목록 수립</div></div>
+              <div class="sr"><span class="n">2</span><div class="t">모듈형 커리큘럼</div></div>
+              <div class="sr"><span class="n">3</span><div class="t">기업문제 발굴</div></div>
+              <div class="sr"><span class="n">4</span><div class="t">Quality Mark 인증</div></div>
+              <div class="sr"><span class="n">5</span><div class="t">취업 연계</div></div>
+            </div></div>
+            <div><div class="sb-block-h">리스크 · 보완</div><div class="risk-row">
+              <div class="rsk risk"><span class="tg">RISK</span><span class="tx">표준화가 교육기관 자율성·특화성을 약화시킬 우려</span></div>
+              <div class="rsk fix"><span class="tg">FIX</span><span class="tx">공통 40% · 전문 40% · 자율 20% 비율로 균형 설정</span></div>
+            </div></div>
+          </div></div>
+        </article>
+
+        <!-- T1.2 -->
+        <article class="sub" data-key="t1-2">
+          <div class="sub-head">
+            <span class="sub-code">T1.2</span>
+            <div class="sub-title">PBL 기반 교육 전환<span class="tagline">강의 → 프로젝트 수행 중심. 기업멘토 + 데모데이 + 포트폴리오</span></div>
+            <div class="sub-pills"><span class="pill">PBL 30%↑</span><span class="pill">데모데이</span></div>
+            <span class="sub-toggle">+</span>
+          </div>
+          <div class="sub-body"><div class="sub-body-inner">
+            <div><div class="sb-block-h">KPI</div><div class="mini-kpis">
+              <div class="mk"><div class="l">기업 참여 교육과정</div><div class="v">5<span class="u">건</span></div></div>
+              <div class="mk"><div class="l">취업연계 프로젝트</div><div class="v">10<span class="u">건</span></div></div>
+              <div class="mk"><div class="l">PBL 비율('30)</div><div class="v">90<span class="u">%</span></div></div>
+              <div class="mk"><div class="l">기업 멘토풀</div><div class="v">50<span class="u">명+</span></div></div>
+            </div></div>
+            <div><div class="sb-block-h">실행 단계</div><div class="steprow">
+              <div class="sr"><span class="n">1</span><div class="t">표준 6단계 설계</div></div>
+              <div class="sr"><span class="n">2</span><div class="t">산출물 표준화</div></div>
+              <div class="sr"><span class="n">3</span><div class="t">멘토 매칭</div></div>
+              <div class="sr"><span class="n">4</span><div class="t">데모데이</div></div>
+              <div class="sr"><span class="n">5</span><div class="t">채용 연계</div></div>
+            </div></div>
+            <div><div class="sb-block-h">리스크 · 보완</div><div class="risk-row">
+              <div class="rsk risk"><span class="tg">RISK</span><span class="tx">기업 참여 저조 또는 평이한 문제로 흐를 우려</span></div>
+              <div class="rsk fix"><span class="tg">FIX</span><span class="tx">난이도 사전 분류 + 앵커기업 단위 과제 풀 사전 확보</span></div>
+            </div></div>
+          </div></div>
+        </article>
+
+        <!-- T1.3 -->
+        <article class="sub" data-key="t1-3">
+          <div class="sub-head">
+            <span class="sub-code">T1.3</span>
+            <div class="sub-title">BDIA Maestro 심화 트랙<span class="tagline">6~12개월 장기 멤버십 · 고급 개발자 · R&D · 후속 창업</span></div>
+            <div class="sub-pills"><span class="pill">12개월 장기</span><span class="pill">R&D</span></div>
+            <span class="sub-toggle">+</span>
+          </div>
+          <div class="sub-body"><div class="sub-body-inner">
+            <div><div class="sb-block-h">KPI</div><div class="mini-kpis">
+              <div class="mk"><div class="l">Maestro 참여자('30)</div><div class="v">100<span class="u">명</span></div></div>
+              <div class="mk"><div class="l">연간 프로젝트</div><div class="v">30<span class="u">건</span></div></div>
+              <div class="mk"><div class="l">후속 창업·R&D</div><div class="v">10<span class="u">건+</span></div></div>
+              <div class="mk"><div class="l">멘토단 규모</div><div class="v">20<span class="u">명</span></div></div>
+            </div></div>
+            <div><div class="sb-block-h">실행 단계</div><div class="steprow">
+              <div class="sr"><span class="n">1</span><div class="t">운영모델 설계</div></div>
+              <div class="sr"><span class="n">2</span><div class="t">선발 (코테·면접)</div></div>
+              <div class="sr"><span class="n">3</span><div class="t">멘토단 운영</div></div>
+              <div class="sr"><span class="n">4</span><div class="t">프로젝트 수행</div></div>
+              <div class="sr"><span class="n">5</span><div class="t">창업·채용 연계</div></div>
+            </div></div>
+            <div><div class="sb-block-h">리스크 · 보완</div><div class="risk-row">
+              <div class="rsk risk"><span class="tg">RISK</span><span class="tx">취업 성과까지 시간 오래 걸릴 수 있음</span></div>
+              <div class="rsk fix"><span class="tg">FIX</span><span class="tx">별도 KPI · 논문·특허·오픈소스·R&D 연계 성과 반영</span></div>
+            </div></div>
+          </div></div>
+        </article>
+
+        <!-- T1.4 -->
+        <article class="sub" data-key="t1-4">
+          <div class="sub-head">
+            <span class="sub-code">T1.4</span>
+            <div class="sub-title">DX 전환 업스킬링<span class="tagline">재직자·비전공자 대상 기업 단위 AI 전환 기초 교육</span></div>
+            <div class="sub-pills"><span class="pill">재직자</span><span class="pill">AX 확산</span></div>
+            <span class="sub-toggle">+</span>
+          </div>
+          <div class="sub-body"><div class="sub-body-inner">
+            <div><div class="sb-block-h">KPI</div><div class="mini-kpis">
+              <div class="mk"><div class="l">참여자 (연)</div><div class="v">500<span class="u">명</span></div></div>
+              <div class="mk"><div class="l">참여 기업</div><div class="v">50<span class="u">개사</span></div></div>
+              <div class="mk"><div class="l">업무 적용률</div><div class="v">80<span class="u">%</span></div></div>
+              <div class="mk"><div class="l">맞춤 과정</div><div class="v">12<span class="u">개</span></div></div>
+            </div></div>
+            <div><div class="sb-block-h">실행 단계</div><div class="steprow">
+              <div class="sr"><span class="n">1</span><div class="t">수요 조사</div></div>
+              <div class="sr"><span class="n">2</span><div class="t">과정 설계</div></div>
+              <div class="sr"><span class="n">3</span><div class="t">교육 운영</div></div>
+              <div class="sr"><span class="n">4</span><div class="t">현장 적용</div></div>
+              <div class="sr"><span class="n">5</span><div class="t">후속 컨설팅</div></div>
+            </div></div>
+            <div><div class="sb-block-h">리스크 · 보완</div><div class="risk-row">
+              <div class="rsk risk"><span class="tg">RISK</span><span class="tx">재직자 참여 시간 확보 어려움</span></div>
+              <div class="rsk fix"><span class="tg">FIX</span><span class="tx">6~12시간 단기모듈, 온라인 병행, 기업방문형 과정</span></div>
+            </div></div>
+          </div></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- TRACK 2 -->
+    <div class="tab-panel" id="t2">
+      <div class="track-meta">
+        <div class="tm-title">취업 지원에서 커리어 관리로 — 전주기 인재 플랫폼으로 산업과 인재를 연결합니다</div>
+        <div class="tm-count"><b>02</b>SUBPROJECTS</div>
+      </div>
+      <div class="subs">
+        <!-- T2.1 -->
+        <article class="sub" data-key="t2-1">
+          <div class="sub-head">
+            <span class="sub-code">T2.1</span>
+            <div class="sub-title">디지털인재연계센터<span class="tagline">교육 — 채용 — 근속 — 재매칭 24개월 전주기 인재관리</span></div>
+            <div class="sub-pills"><span class="pill">24개월 추적</span><span class="pill">AI 매칭</span></div>
+            <span class="sub-toggle">+</span>
+          </div>
+          <div class="sub-body"><div class="sub-body-inner">
+            <div><div class="sb-block-h">KPI</div><div class="mini-kpis">
+              <div class="mk"><div class="l">인재 DB('30)</div><div class="v">5,000<span class="u">명</span></div></div>
+              <div class="mk"><div class="l">기업 DB('30)</div><div class="v">1,000<span class="u">개사</span></div></div>
+              <div class="mk"><div class="l">6개월 근속률</div><div class="v">80<span class="u">%</span></div></div>
+              <div class="mk"><div class="l">지역기업 취업</div><div class="v">1,000<span class="u">명</span></div></div>
+            </div></div>
+            <div><div class="sb-block-h">실행 단계</div><div class="steprow">
+              <div class="sr"><span class="n">1</span><div class="t">조직 설계</div></div>
+              <div class="sr"><span class="n">2</span><div class="t">인재 DB</div></div>
+              <div class="sr"><span class="n">3</span><div class="t">기업 DB</div></div>
+              <div class="sr"><span class="n">4</span><div class="t">상담·매칭</div></div>
+              <div class="sr"><span class="n">5</span><div class="t">근속관리</div></div>
+            </div></div>
+            <div><div class="sb-block-h">리스크 · 보완</div><div class="risk-row">
+              <div class="rsk risk"><span class="tg">RISK</span><span class="tx">수료생 추적관리 동의 확보 어려움</span></div>
+              <div class="rsk fix"><span class="tg">FIX</span><span class="tx">교육 신청 단계에서 사후관리 동의 절차 선제 마련</span></div>
+            </div></div>
+          </div></div>
+        </article>
+
+        <!-- T2.2 -->
+        <article class="sub" data-key="t2-2">
+          <div class="sub-head">
+            <span class="sub-code">T2.2</span>
+            <div class="sub-title">AI 마이크로워크 실무경험<span class="tagline">교육 → 과업 → 검수 → 포트폴리오 → 채용연계</span></div>
+            <div class="sub-pills"><span class="pill">과업형</span><span class="pill">포트폴리오</span></div>
+            <span class="sub-toggle">+</span>
+          </div>
+          <div class="sub-body"><div class="sub-body-inner">
+            <div><div class="sb-block-h">KPI</div><div class="mini-kpis">
+              <div class="mk"><div class="l">과업 발굴('30)</div><div class="v">500<span class="u">건</span></div></div>
+              <div class="mk"><div class="l">참여 인재('30)</div><div class="v">1,000<span class="u">명</span></div></div>
+              <div class="mk"><div class="l">채용 연계</div><div class="v">250<span class="u">건</span></div></div>
+              <div class="mk"><div class="l">참여 기업</div><div class="v">80<span class="u">개</span></div></div>
+            </div></div>
+            <div><div class="sb-block-h">실행 단계</div><div class="steprow">
+              <div class="sr"><span class="n">1</span><div class="t">과업 발굴</div></div>
+              <div class="sr"><span class="n">2</span><div class="t">사전 교육</div></div>
+              <div class="sr"><span class="n">3</span><div class="t">수행·검수</div></div>
+              <div class="sr"><span class="n">4</span><div class="t">포트폴리오</div></div>
+              <div class="sr"><span class="n">5</span><div class="t">채용 연계</div></div>
+            </div></div>
+            <div><div class="sb-block-h">리스크 · 보완</div><div class="risk-row">
+              <div class="rsk risk"><span class="tg">RISK</span><span class="tx">단순 저가 노동으로 비칠 우려, 결과물 품질 편차</span></div>
+              <div class="rsk fix"><span class="tg">FIX</span><span class="tx">교육 목적·수행비·검수기준·채용연계 구조 명확화</span></div>
+            </div></div>
+          </div></div>
+        </article>
+      </div>
+    </div>
+
+    <!-- TRACK 3 -->
+    <div class="tab-panel" id="t3">
+      <div class="track-meta">
+        <div class="tm-title">60개 기관 상설 협의체 + 권역별 거점 + 통합 브랜드로 도시 차원의 조정 플랫폼을 구축합니다</div>
+        <div class="tm-count"><b>03</b>SUBPROJECTS</div>
+      </div>
+      <div class="subs">
+        <!-- T3.1 -->
+        <article class="sub" data-key="t3-1">
+          <div class="sub-head">
+            <span class="sub-code">T3.1</span>
+            <div class="sub-title">교육 거버넌스 운영<span class="tagline">60개 기관 상설 협의체 · 앵커기업 분과 · 수요 로드맵</span></div>
+            <div class="sub-pills"><span class="pill">60개 기관</span><span class="pill">앵커기업</span></div>
+            <span class="sub-toggle">+</span>
+          </div>
+          <div class="sub-body"><div class="sub-body-inner">
+            <div><div class="sb-block-h">KPI</div><div class="mini-kpis">
+              <div class="mk"><div class="l">참여기관('30)</div><div class="v">70<span class="u">개</span></div></div>
+              <div class="mk"><div class="l">앵커기업</div><div class="v">30<span class="u">개사</span></div></div>
+              <div class="mk"><div class="l">분과 운영</div><div class="v">6<span class="u">개</span></div></div>
+              <div class="mk"><div class="l">기술수요 보고서</div><div class="v">1<span class="u">회/년</span></div></div>
+            </div></div>
+            <div><div class="sb-block-h">실행 단계</div><div class="steprow">
+              <div class="sr"><span class="n">1</span><div class="t">협의체 구성</div></div>
+              <div class="sr"><span class="n">2</span><div class="t">수요 조사</div></div>
+              <div class="sr"><span class="n">3</span><div class="t">로드맵 수립</div></div>
+              <div class="sr"><span class="n">4</span><div class="t">교육과정 반영</div></div>
+              <div class="sr"><span class="n">5</span><div class="t">성과 환류</div></div>
+            </div></div>
+            <div><div class="sb-block-h">리스크 · 보완</div><div class="risk-row">
+              <div class="rsk risk"><span class="tg">RISK</span><span class="tx">기업 참여가 형식적 자문에 그칠 우려</span></div>
+              <div class="rsk fix"><span class="tg">FIX</span><span class="tx">실 교육·프로젝트·채용연계로 이어진 경우만 실적 인정</span></div>
+            </div></div>
+          </div></div>
+        </article>
+
+        <!-- T3.2 -->
+        <article class="sub" data-key="t3-2">
+          <div class="sub-head">
+            <span class="sub-code">T3.2</span>
+            <div class="sub-title">권역별 교육거점<span class="tagline">동부산 · 원도심 + 서부산 신설 (제조 AI·스마트팩토리)</span></div>
+            <div class="sub-pills"><span class="pill">서부산 NEW</span><span class="pill">권역 특화</span></div>
+            <span class="sub-toggle">+</span>
+          </div>
+          <div class="sub-body"><div class="sub-body-inner">
+            <div><div class="sb-block-h">KPI</div><div class="mini-kpis">
+              <div class="mk"><div class="l">신규 거점('26)</div><div class="v">1<span class="u">개소</span></div></div>
+              <div class="mk"><div class="l">위성캠퍼스('30)</div><div class="v">6<span class="u">개</span></div></div>
+              <div class="mk"><div class="l">특화 과정</div><div class="v">15<span class="u">개</span></div></div>
+              <div class="mk"><div class="l">권역 교육생</div><div class="v">1,500<span class="u">명</span></div></div>
+            </div></div>
+            <div><div class="sb-block-h">실행 단계</div><div class="steprow">
+              <div class="sr"><span class="n">1</span><div class="t">권역 수요분석</div></div>
+              <div class="sr"><span class="n">2</span><div class="t">거점 선정</div></div>
+              <div class="sr"><span class="n">3</span><div class="t">특화 운영</div></div>
+              <div class="sr"><span class="n">4</span><div class="t">본원 표준 적용</div></div>
+              <div class="sr"><span class="n">5</span><div class="t">성과 확산</div></div>
+            </div></div>
+            <div><div class="sb-block-h">리스크 · 보완</div><div class="risk-row">
+              <div class="rsk risk"><span class="tg">RISK</span><span class="tx">본원과 권역 거점 간 품질·운영 편차 발생 우려</span></div>
+              <div class="rsk fix"><span class="tg">FIX</span><span class="tx">강사풀·커리큘럼·평가체계의 본원 표준 적용 의무화</span></div>
+            </div></div>
+          </div></div>
+        </article>
+
+        <!-- T3.3 -->
+        <article class="sub" data-key="t3-3">
+          <div class="sub-head">
+            <span class="sub-code">T3.3</span>
+            <div class="sub-title">BDIA 브랜드 통합 홍보<span class="tagline">하위 브랜드 구조화 · 대표 행사 · 통합 채널</span></div>
+            <div class="sub-pills"><span class="pill">통합 BI</span><span class="pill">대표행사</span></div>
+            <span class="sub-toggle">+</span>
+          </div>
+          <div class="sub-body"><div class="sub-body-inner">
+            <div><div class="sb-block-h">KPI</div><div class="mini-kpis">
+              <div class="mk"><div class="l">브랜드 인지도</div><div class="v">+30<span class="u">%p</span></div></div>
+              <div class="mk"><div class="l">대표행사 참여자</div><div class="v">2,000<span class="u">명</span></div></div>
+              <div class="mk"><div class="l">하위 브랜드</div><div class="v">5<span class="u">개</span></div></div>
+              <div class="mk"><div class="l">언론 노출</div><div class="v">120<span class="u">건/년</span></div></div>
+            </div></div>
+            <div><div class="sb-block-h">실행 단계</div><div class="steprow">
+              <div class="sr"><span class="n">1</span><div class="t">정체성 정립</div></div>
+              <div class="sr"><span class="n">2</span><div class="t">하위 브랜드</div></div>
+              <div class="sr"><span class="n">3</span><div class="t">채널 통합</div></div>
+              <div class="sr"><span class="n">4</span><div class="t">대표 행사</div></div>
+              <div class="sr"><span class="n">5</span><div class="t">성과 관리</div></div>
+            </div></div>
+            <div><div class="sb-block-h">리스크 · 보완</div><div class="risk-row">
+              <div class="rsk risk"><span class="tg">RISK</span><span class="tx">기존 사업명이 많아 통합이 어려울 수 있음</span></div>
+              <div class="rsk fix"><span class="tg">FIX</span><span class="tx">하위 브랜드로 흡수, 대외 노출명은 BDIA로 단일화</span></div>
+            </div></div>
+          </div></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGIONS -->
+<section class="sec tight" id="regions">
+  <div class="wrap">
+    <div class="sec-h rev">
+      <div class="l">
+        <h2>권역별 <span class="grad">교육거점</span></h2>
+        <div class="kicker">권역 산업 특성에 맞춘 분산형 거점 · 탭을 눌러 각 권역의 특화 영역을 확인하세요</div>
+      </div>
+      <div class="r"><span class="hint">TAB</span></div>
+    </div>
+
+    <div class="rg-wrap rev">
+      <div class="rg-tabs">
+        <button class="rg-tab active" data-rg="east">
+          <span class="rg-status">EXISTING</span>
+          <h4>동부산권<span class="en">East Busan</span></h4>
+          <div class="focus">관광테크 · 콘텐츠 · 라이프스타일 AI</div>
+        </button>
+        <button class="rg-tab" data-rg="center">
+          <span class="rg-status">EXISTING · 본원</span>
+          <h4>센텀 · 원도심<span class="en">Centum &amp; Old Town</span></h4>
+          <div class="focus">AI · 클라우드 · 콘텐츠 · 게임</div>
+        </button>
+        <button class="rg-tab new" data-rg="west">
+          <span class="rg-status">NEW · 신설</span>
+          <h4>서부산권<span class="en">West Busan</span></h4>
+          <div class="focus">제조 AI · 스마트팩토리 · 물류</div>
+        </button>
+      </div>
+
+      <div class="rg-panel active" data-rg="east">
+        <div class="l">
+          <h5>REGIONAL HUB · EAST</h5>
+          <h3>관광·콘텐츠 산업과 결합된 라이프스타일 AI 거점</h3>
+          <p>해운대·기장권의 관광·콘텐츠 산업 인프라를 활용해, 라이프스타일 AI와 서비스 AI를 결합한 교육과 채용연계를 운영합니다.</p>
+        </div>
+        <div class="r">
+          <div class="rg-item"><div class="ic">PBL</div><div class="tx"><b>관광·콘텐츠 데이터 PBL</b><span>지역 콘텐츠 기업 협력 프로젝트</span></div></div>
+          <div class="rg-item"><div class="ic">AI</div><div class="tx"><b>라이프스타일 AI 특화</b><span>서비스·체험·여행 AI 트랙</span></div></div>
+          <div class="rg-item"><div class="ic">JOB</div><div class="tx"><b>지역 콘텐츠 기업 연계</b><span>채용설명회·매칭데이 정례화</span></div></div>
+        </div>
+      </div>
+
+      <div class="rg-panel" data-rg="center">
+        <div class="l">
+          <h5>REGIONAL HUB · CENTER</h5>
+          <h3>본원 표준 운영 · AI·클라우드 핵심 거점</h3>
+          <p>센텀시티·원도심에 본원을 두고 표준 커리큘럼, 강사풀, 평가체계의 기준점 역할을 합니다. AI·클라우드·데이터·콘텐츠·게임 핵심 과정을 집중 운영합니다.</p>
+        </div>
+        <div class="r">
+          <div class="rg-item"><div class="ic">STD</div><div class="tx"><b>본원 표준 커리큘럼</b><span>강사풀·평가체계 기준점</span></div></div>
+          <div class="rg-item"><div class="ic">AI</div><div class="tx"><b>AI·클라우드·데이터 핵심</b><span>전략산업 공통 모듈 중심</span></div></div>
+          <div class="rg-item"><div class="ic">GAME</div><div class="tx"><b>게임·콘텐츠 연계</b><span>지역 강소기업 협력 프로젝트</span></div></div>
+        </div>
+      </div>
+
+      <div class="rg-panel" data-rg="west">
+        <div class="l">
+          <h5>REGIONAL HUB · WEST</h5>
+          <h3>제조·물류 산업단지 직결 — 신설 거점</h3>
+          <p>강서·사상권 제조·물류 산업단지와 직접 연결된 신규 거점을 설치합니다. 스마트팩토리·산업 데이터 AI 특화과정과 항만물류 기업 PBL을 운영합니다.</p>
+        </div>
+        <div class="r">
+          <div class="rg-item"><div class="ic">NEW</div><div class="tx"><b>제조·물류 거점 신설</b><span>강서·사상 산업단지 직결</span></div></div>
+          <div class="rg-item"><div class="ic">MFG</div><div class="tx"><b>스마트팩토리 특화</b><span>산업 데이터 AI 전문 과정</span></div></div>
+          <div class="rg-item"><div class="ic">PORT</div><div class="tx"><b>해양·항만물류 PBL</b><span>물류 데이터 기업 협력 프로젝트</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="sec tight" id="roadmap">
+  <div class="wrap">
+    <div class="sec-h rev">
+      <div class="l">
+        <h2>실행 <span class="grad">로드맵</span></h2>
+        <div class="kicker">연도 점을 클릭하면 해당 시기의 주요 추진 과제가 표시됩니다</div>
+      </div>
+      <div class="r"><span class="hint">CLICK · HOVER</span></div>
+    </div>
+
+    <div class="rm-wrap rev">
+      <div class="rm-track">
+        <div class="rm-line"><i id="rmLine"></i></div>
+        <div class="rm-dots" id="rmDots">
+          <button class="rm-dot active" data-phase="0"><span class="y">'26—'27</span></button>
+          <button class="rm-dot" data-phase="1"><span class="y">'28</span></button>
+          <button class="rm-dot" data-phase="2"><span class="y">'29</span></button>
+          <button class="rm-dot" data-phase="3"><span class="y">'30</span></button>
+          <button class="rm-dot" data-phase="4"><span class="y">'31</span></button>
+        </div>
+      </div>
+
+      <div class="rm-content">
+        <div class="rm-panel active" data-phase="0">
+          <div class="phase">PHASE 1<small>기반 구축</small></div>
+          <div class="desc"><h4>2026—2027 · 사업 기반 마련</h4>
+            <ul>
+              <li>교육 거버넌스 협의체 구성</li>
+              <li>표준 커리큘럼 초안 수립</li>
+              <li>기업문제 과제은행 구축</li>
+              <li>디지털인재연계센터 설치</li>
+              <li>Quality Mark 시범 도입</li>
+              <li>서부산 거점 1개소 신설</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rm-panel" data-phase="1">
+          <div class="phase">2028<small>확산 1단계</small></div>
+          <div class="desc"><h4>2028 · 표준 적용 확산</h4>
+            <ul>
+              <li>표준 커리큘럼 전 과정 확산</li>
+              <li>PBL 비중 50% 이상</li>
+              <li>마이크로워크 시범 운영</li>
+              <li>BDIA 브랜드 체계 정비</li>
+              <li>인재 DB 1차 구축</li>
+              <li>분과별 앵커기업 확보</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rm-panel" data-phase="2">
+          <div class="phase">2029<small>고도화</small></div>
+          <div class="desc"><h4>2029 · Maestro · AI 매칭 고도화</h4>
+            <ul>
+              <li>Maestro 트랙 정규사업화</li>
+              <li>AI 매칭 인재플랫폼 고도화</li>
+              <li>권역별 위성캠퍼스 4개소</li>
+              <li>BDIA 대표행사 정례화</li>
+              <li>업스킬링 참여기업 50개+</li>
+              <li>채용연계 누적 500건</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rm-panel" data-phase="3">
+          <div class="phase">2030<small>정착</small></div>
+          <div class="desc"><h4>2030 · 인재 순환 성과 결실</h4>
+            <ul>
+              <li>지역기업 취업 1,000명 달성</li>
+              <li>6개월 근속률 80% 달성</li>
+              <li>인재 DB 5,000명 등록</li>
+              <li>수료생 생애주기 관리</li>
+              <li>대표행사 참여 2,000명</li>
+              <li>표준 커리큘럼 적용 90%</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rm-panel" data-phase="4">
+          <div class="phase">2031<small>순환 완성</small></div>
+          <div class="desc"><h4>2031 · 부산형 인재 순환 생태계 확립</h4>
+            <ul>
+              <li>교육-취업-근속-재매칭 완성</li>
+              <li>산업별 AI 인재 공급 내재화</li>
+              <li>지역기업 공동부담 모델</li>
+              <li>부산 대표 커리어 플랫폼</li>
+              <li>마이크로워크 500건 누적</li>
+              <li>지역대학 RISE 연계 정착</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section class="sec tight" id="outcomes">
+  <div class="wrap">
+    <div class="sec-h rev">
+      <div class="l">
+        <h2>기대 <span class="grad">효과</span></h2>
+        <div class="kicker">BDIA 2.0은 교육 산출이 아닌 인재 순환을 성과로 측정합니다</div>
+      </div>
+    </div>
+
+    <div class="out-grid rev-stagger">
+      <div class="out">
+        <div class="o-no">EFFECT 01</div>
+        <h4>부산 산업의 AI 전환 대응력 강화</h4>
+        <ul>
+          <li>산업별 AI 활용 수요에 맞춘 인재 공급으로 지역기업 AX 전환 직접 지원</li>
+          <li>제조·항만물류·금융·관광·콘텐츠 등 전략산업 AI 도입 기반 강화</li>
+        </ul>
+      </div>
+      <div class="out">
+        <div class="o-no">EFFECT 02</div>
+        <h4>지역 청년의 취업·정착 기반 확대</h4>
+        <ul>
+          <li>교육 수료 중심에서 취업·근속·재교육 중심으로 성과관리 전환</li>
+          <li>지역기업 취업 가능성을 높이고 청년 인재의 부산 정착 유도</li>
+        </ul>
+      </div>
+      <div class="out">
+        <div class="o-no">EFFECT 03</div>
+        <h4>교육 중복과 미스매치 완화</h4>
+        <ul>
+          <li>대학·민간기관·기업 교육수요 통합 조정으로 유사 과정 난립 방지</li>
+          <li>기업수요 기반 교육과 매칭으로 채용 미스매치 완화</li>
+        </ul>
+      </div>
+      <div class="out">
+        <div class="o-no">EFFECT 04</div>
+        <h4>부산형 AI 인재 생태계 구축</h4>
+        <ul>
+          <li>단기 사업이 아닌 지속 가능한 인재순환 생태계 확보</li>
+          <li>부산 AI 산업·일자리·대학을 연결하는 핵심 플랫폼으로 확장</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL KPI (DARK) -->
+<section class="final">
+  <div class="final-year">2030</div>
+  <div class="wrap final-inner">
+    <h3>BDIA 2.0 · 2030 TARGETS</h3>
+    <h2>2030년, BDIA 2.0이 도달하려는<br><span class="grad">총괄 성과지표</span></h2>
+
+    <div class="final-grid">
+      <div class="fk"><div class="v" data-cnt="1000"><span class="cnt">0</span><span class="u">명</span></div><div class="l">부산 지역기업 취업자</div></div>
+      <div class="fk"><div class="v" data-cnt="80"><span class="cnt">0</span><span class="u">%</span></div><div class="l">6개월 근속률</div></div>
+      <div class="fk"><div class="v" data-cnt="5000"><span class="cnt">0</span><span class="u">명</span></div><div class="l">인재 DB 등록</div></div>
+      <div class="fk"><div class="v" data-cnt="1000"><span class="cnt">0</span><span class="u">개사</span></div><div class="l">기업 DB 등록</div></div>
+      <div class="fk"><div class="v" data-cnt="90"><span class="cnt">0</span><span class="u">%</span></div><div class="l">표준 커리큘럼 적용 과정</div></div>
+      <div class="fk"><div class="v" data-cnt="100"><span class="cnt">0</span><span class="u">명</span></div><div class="l">Maestro 심화 인재</div></div>
+      <div class="fk"><div class="v" data-cnt="500"><span class="cnt">0</span><span class="u">건</span></div><div class="l">마이크로워크 과업</div></div>
+      <div class="fk"><div class="v" data-cnt="70"><span class="cnt">0</span><span class="u">개</span></div><div class="l">협의체 참여기관</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <div class="logo-mark" style="margin-bottom:6px">
+          <div class="sq">B</div>
+          <div class="logo-name">BDIA<sub>2.0</sub></div>
+        </div>
+        <p>부산형 디지털 인재 순환 생태계. 부산정보산업진흥원(BIPA)이 부산광역시와 함께 추진하는 ICT 인재양성 정책 플랫폼입니다.</p>
+      </div>
+      <div class="foot-col">
+        <h5>POLICY BRIEF</h5>
+        <ul>
+          <li>「부산 ICT 인재양성 발전방안」</li>
+          <li>BDIA 2.0 사업계획서</li>
+          <li>부산시 보고자료 v2</li>
+          <li>2026.05.22</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>CONTACT</h5>
+        <ul>
+          <li>부산정보산업진흥원</li>
+          <li>인재양성단 · 정책기획팀</li>
+          <li>busanit.or.kr</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 BIPA · BDIA 2.0 Policy Brief</span>
+      <span>v.2026-05-22 · github pages build</span>
+    </div>
+  </div>
+</footer>
+
+<!-- TOC FLOATING -->
+<div class="toc" id="toc">
+  <span class="num" id="tocNum">00</span>
+  <span style="color:var(--ink-4)">/</span>
+  <span class="name" id="tocName">INTRO</span>
+</div>
+
+<script>
+/* ====== COUNT UP ====== */
+const countUp = (el, target, dur=1400) => {
+  const start = performance.now();
+  const tick = (now) => {
+    const p = Math.min((now - start) / dur, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const v = Math.floor(target * eased);
+    el.textContent = v.toLocaleString();
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = target.toLocaleString();
+  };
+  requestAnimationFrame(tick);
+};
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      const el = en.target;
+      el.classList.add('in');
+      const cntEls = el.querySelectorAll('.cnt');
+      cntEls.forEach(c => {
+        const parent = c.closest('[data-cnt]');
+        if (parent && !parent.dataset.counted) {
+          countUp(c, parseInt(parent.dataset.cnt, 10));
+          parent.dataset.counted = '1';
+        }
+      });
+      io.unobserve(el);
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.qc, .fk, .rev, .rev-stagger').forEach(el => io.observe(el));
+
+/* ====== TRACK TABS ====== */
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+  });
+});
+
+/* ====== SUB ACCORDION ====== */
+document.querySelectorAll('.sub-head').forEach(head => {
+  head.addEventListener('click', () => {
+    head.closest('.sub').classList.toggle('open');
+  });
+});
+
+/* ====== REGION TABS ====== */
+document.querySelectorAll('.rg-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.rg;
+    document.querySelectorAll('.rg-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.rg-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelector(`.rg-panel[data-rg="${target}"]`).classList.add('active');
+  });
+});
+
+/* ====== ROADMAP ====== */
+const rmDots = document.querySelectorAll('.rm-dot');
+const rmPanels = document.querySelectorAll('.rm-panel');
+const rmLine = document.getElementById('rmLine');
+const updateRm = (i) => {
+  rmDots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+  rmPanels.forEach(p => p.classList.toggle('active', parseInt(p.dataset.phase, 10) === i));
+  rmLine.style.width = (i / (rmDots.length - 1) * 100) + '%';
+};
+rmDots.forEach((dot, i) => {
+  dot.addEventListener('click', () => updateRm(i));
+  dot.addEventListener('mouseenter', () => updateRm(i));
+});
+updateRm(0);
+
+/* ====== SCROLL PROGRESS + TOC ====== */
+const scrollProg = document.getElementById('scrollProg');
+const tocNum = document.getElementById('tocNum');
+const tocName = document.getElementById('tocName');
+const sections = [
+  { id: 'hero', name: 'INTRO', num: 0 },
+  { id: 'why', name: 'WHY 2.0', num: 1 },
+  { id: 'vision', name: 'VISION', num: 2 },
+  { id: 'tracks', name: '3 TRACKS', num: 3 },
+  { id: 'regions', name: 'REGIONS', num: 4 },
+  { id: 'roadmap', name: 'ROADMAP', num: 5 },
+  { id: 'outcomes', name: 'OUTCOMES', num: 6 },
+];
+const heroEl = document.querySelector('.hero');
+const navLinks = document.querySelectorAll('#gnbMenu a');
+
+const updateScroll = () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  const p = (window.scrollY / h) * 100;
+  scrollProg.style.width = p + '%';
+
+  const y = window.scrollY + 200;
+  let cur = sections[0];
+  sections.forEach(s => {
+    const el = s.id === 'hero' ? heroEl : document.getElementById(s.id);
+    if (el && el.offsetTop <= y) cur = s;
+  });
+  tocNum.textContent = String(cur.num).padStart(2, '0');
+  tocName.textContent = cur.name;
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur.id);
+  });
+};
+window.addEventListener('scroll', updateScroll, { passive: true });
+updateScroll();
+</script>
+
+</body>
+</html>
